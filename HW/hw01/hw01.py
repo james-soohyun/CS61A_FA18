@@ -31,7 +31,7 @@ def two_of_three(a, b, c):
     >>> two_of_three(5, 5, 5)
     50
     """
-    return pow(max(a, b, c), 2) + pow(min(max(a, b), max(b, c)), 2)
+    return pow(max(a, b, c), 2) + pow(min(max(a, b), max(b, c), max(a, c)), 2)
 
 # Q3
 def largest_factor(n):
@@ -46,11 +46,12 @@ def largest_factor(n):
     """
     "*** YOUR CODE HERE ***"
     factor = n // 2
-    while factor > 0:
+    while factor > 1:
         if n % factor == 0:
             return factor
         else:
             factor -= 1
+    return 1
 
 # Q4
 def if_function(condition, true_result, false_result):
@@ -96,12 +97,15 @@ def with_if_function():
 
 def c():
     "*** YOUR CODE HERE ***"
+    return False
 
 def t():
     "*** YOUR CODE HERE ***"
+    return print(1)
 
 def f():
     "*** YOUR CODE HERE ***"
+    return print(2)
 
 # Q5
 def hailstone(n):
@@ -120,6 +124,16 @@ def hailstone(n):
     7
     """
     "*** YOUR CODE HERE ***"
+    count = 1
+    while n != 1:
+        count+=1
+        print(n)
+        if n % 2 == 0:
+            n //= 2
+        else:
+            n = n * 3 + 1
+    print(n)
+    return count
 
 # Q6
 quine = """
